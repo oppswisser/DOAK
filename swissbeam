@@ -1,4 +1,4 @@
-pawn(function()
+spawn(function()
 	local ye   = game.Players.LocalPlayer:GetMouse()
 	local anim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.Players.LocalPlayer.Backpack["Masenko"].LocalScript.Animation)
 	anim:play()
