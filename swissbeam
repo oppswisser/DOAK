@@ -1,0 +1,60 @@
+local args = {
+    [1] = "Masenko"
+}
+
+game:GetService("ReplicatedStorage").Events.giveskill:FireServer(unpack(args))
+
+wait(1)
+
+spawn(function()
+	local ye   = game.Players.LocalPlayer:GetMouse()
+	local anim = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(game.Players.LocalPlayer.Backpack["Masenko"].LocalScript.Animation)
+	anim:play()
+	anim:AdjustSpeed(1.0)
+	playername = game.Players.LocalPlayer.Name
+	damage = 10
+	color = "Red"
+	speed = 0.8
+	size = -99999999999999999999999999
+	for i = 1,1 do
+		wait(speed)
+		local tbl_main = 
+		{
+			false, 
+			"Masenko", 
+			color, 
+			2411, 
+			vector, 
+			damage, -- damage
+			0, 
+			game:GetService("Players")[playername].Backpack["Masenko"], 
+			0, 
+			24
+		}
+		game:GetService("ReplicatedStorage").Events.beam:FireServer(unpack(tbl_main))
+		wait()
+		mouse = game.Players.LocalPlayer:GetMouse()
+		local pos = mouse.Hit
+		pos = Vector3.new(pos.X,pos.Y,pos.Z)
+		vector = pos
+		local tbl_main = 
+		{
+			true, 
+			"Masenko", 
+			color, 
+			2411, 
+			vector, 
+			damage, --damage
+			0, 
+			game:GetService("Players")[playername].Backpack["Masenko"], 
+			size, 
+			3, 
+			400,--xp 
+			1,
+			"big"
+		}
+		game:GetService("ReplicatedStorage").Events.beam:FireServer(unpack(tbl_main))
+		wait(0.3)
+		anim:stop()
+	end
+	end)
